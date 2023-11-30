@@ -84,7 +84,7 @@ def grade_flake8(issues, type):
 
 def write_csv(row):
     csv_filename = "csv/Similarity_Syntax_Style_results.csv"
-    with open(csv_filename, "a",newline='') as file:
+    with open(csv_filename, "a", newline='') as file:
         fieldnames = ['Ref Program', 'input_filename', 'Total Score Winnowing', 'Similarity Score', 'Score by num of failure', 'Score by num of error', 'Score by num of warning']
         writer = csv.DictWriter(file, fieldnames=fieldnames)
         
