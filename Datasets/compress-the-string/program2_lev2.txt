@@ -1,6 +1,0 @@
-alias(name='groupby')
-Name(id='x', ctx=Store())
-Call(func=Name(id='x', ctx=Load()), args=[], keywords=[])
-Tuple(elts=[Name(id='x', ctx=Store()), Name(id='x', ctx=Store())], ctx=Store())
-Call(func=Name(id='x', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[])
-Expr(value=Call(func=Name(id='x', ctx=Load()), args=[Tuple(elts=[Call(func=Name(id='x', ctx=Load()), args=[Call(func=Name(id='x', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[])], keywords=[]), Call(func=Name(id='x', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[])], ctx=Load())], keywords=[keyword(arg='end', value=Constant(value=' '))]))
