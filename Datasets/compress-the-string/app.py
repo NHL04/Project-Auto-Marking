@@ -67,20 +67,35 @@ def grade_flake8(issues, type):
 
     max_score = 100
 
-    match type:
-        case "failure":
-            score = (max_score - (5)*issues ) if ((max_score - (5)*issues) >= 0) else 0
+    # match type:
+    #     case "failure":
+    #         score = (max_score - (5)*issues ) if ((max_score - (5)*issues) >= 0) else 0
 
-        case "error":
-            score = (max_score - (2) * issues) if ((max_score - (2) * issues) >= 0) else 0
+    #     case "error":
+    #         score = (max_score - (2) * issues) if ((max_score - (2) * issues) >= 0) else 0
 
-        case "warning":
-            score = (max_score - (1) * issues) if ((max_score - (1) * issues) >= 0) else 0
+    #     case "warning":
+    #         score = (max_score - (1) * issues) if ((max_score - (1) * issues) >= 0) else 0
 
-        case _:
-            return
+    #     case _:
+    #         return
 
-    return score
+    # return score
+
+    def calculate_score(issue_type, issues, max_score):
+        if issue_type == "failure":
+            score = max_score - (5 * issues)
+        elif issue_type == "error":
+            score = max_score - (2 * issues)
+        elif issue_type == "warning":
+            score = max_score - (1 * issues)
+        else:
+            return None  # Or you can return a default value if needed
+
+        return score    
+    
+    final_score = calculate_score(type,issues,max_score)
+    return final_score
 
 def write_csv(row):
     csv_filename = "csv/Similarity_Syntax_Style_results.csv"
@@ -130,7 +145,10 @@ def process_directory(ref_file_path, directory_path):
     data_unittest = pd.read_csv('csv/unittest_result.csv')
 
     data_merge = pd.merge(data_similar, data_unittest, on="input_filename", how="inner")
-    data_merge.to_csv("csv/result.csv")
+    
+    print(data_merge)
+
+    return data_merge
 
 process_directory('ref.py','Correct')
 
