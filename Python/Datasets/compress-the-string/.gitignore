@@ -1,2 +1,5 @@
 /csv/*.csv
 *.txt
+.pytest_cache
+/__pycacache__
+__pycacache__
