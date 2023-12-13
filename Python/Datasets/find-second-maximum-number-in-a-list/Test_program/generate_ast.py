@@ -146,13 +146,3 @@ for ele in pc_1:
     for item in ele[1]:
         output_file_lev2.write(item)
         output_file_lev2.write('\n')
-
-# print("-----------------------------LEVEL1 -> LEVEL2-----------------------------------------------------")
-# for i in range(len(parents1)):
-#     print("Parent = ", parents1[i], "\nChildren = ", children1[i])
-#     print("\n")
-# print("------------------------------LEVEL2 -> LEVEL3----------------------------------------------------")
-# for i in range(len(parents2)):
-#     print("Parent = ", parents2[i], "\nChildren = ", children2[i])
-#     print("\n")
-# print("-------------------------------------------------------------------------------------------")
