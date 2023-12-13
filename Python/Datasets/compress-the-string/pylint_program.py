@@ -1,43 +1,3 @@
-from pylint import lint
-from pylint.reporters import CollectingReporter
-import os
-
-def count_messages(messages, category):
-    return sum(1 for msg in messages if msg.C == category)
-
-def main():
-    # Path to the folder containing the files
-    folder_path = "submit_code"
-
-    # Get a list of all Python files in the folder
-    files = [f for f in os.listdir(folder_path) if f.endswith(".py")]
-
-    for file in files:
-        file_path = os.path.join(folder_path, file)
-
-        # Print current file
-        print(f"Results for {file}")
-
-        # Run pylint to collect messages
-        reporter = CollectingReporter()
-        pylint_obj = lint.Run([file_path], reporter=reporter, exit=False)
-
-        # Extract the score from pylint_obj.linter.stats
-        score = pylint_obj.linter.stats.global_note
-        print(f"Extracted Score: {score}")
-
-        # Count the total number of 'E' and 'R' messages
-        total_errors = count_messages(reporter.messages, 'E')
-        total_refactors = count_messages(reporter.messages, 'R')
-
-        print(f"Total Errors (E): {total_errors}")
-        print(f"Total Refactors (R): {total_refactors}")
-        print('=' * 30)
-
-if __name__ == '__main__':
-    main()
-
-
 import csv
 from pylint import lint
 from pylint.reporters import CollectingReporter
@@ -46,9 +6,9 @@ import os
 def count_messages(messages, category):
     return sum(1 for msg in messages if msg.C == category)
 
-def main():
+def pylint_program():
     # Path to the folder containing the files
-    folder_path = "submit_code"
+    folder_path = "Correct"
     output_folder = "csv"
     os.makedirs(output_folder, exist_ok=True)
 
@@ -90,5 +50,4 @@ def main():
 
     print(f"CSV file created: {csv_file_path}")
 
-if __name__ == '__main__':
-    main()
+
