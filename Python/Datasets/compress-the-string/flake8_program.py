@@ -52,9 +52,9 @@ def write_counts_to_csv(csv_folder, file_counts):
         writer.writeheader()
         writer.writerows(file_counts)
 
-if __name__ == "__main__":
+def flake8_program():
     # Specify the folder path where your Python scripts are located
-    scripts_folder = 'submit_code'
+    scripts_folder = 'Correct'
 
     # Specify the CSV folder path
     csv_folder = 'csv'
