@@ -39,7 +39,7 @@ def process_directory():
         if file_name.endswith(".py"):
             file_path = os.path.join(directory_path, file_name)
             print(f"Running tests for {file_path}")
-            command = f"pytest --input-filename={file_path} --tb=no"
+            command = f"pytest --input-filename={file_name} --tb=no"
             try:
                 subprocess.run(command, shell=True, check=True)
             except subprocess.CalledProcessError as e:

@@ -7,18 +7,6 @@ from io import StringIO
 program1 = 'program1'
 program2 = 'program2'
 
-# import json
-# from ast import parse  
-# from ast2json import ast2json
-# def test_ast2json():
-#     ast = ast2json(parse(open('test_ast.py').read()))
-#     with open('data.json', 'w') as f:
-#         json.dump(ast, f, indent = "\t")
-
-# def test_ast2json1():
-#     ast = ast2json(parse(open('test_ast.py').read()))
-#     with open('data1.json', 'w') as f:
-#         json.dump(ast, f, indent = "\t")
 
 def result(ref_file_path,file_path):
     row = winnowing.result_winnowing()
